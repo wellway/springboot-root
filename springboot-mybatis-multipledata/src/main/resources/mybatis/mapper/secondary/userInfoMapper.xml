@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yalongz.component.mapper.secondary.userInfoMapper" >
+
+<select id="getOne" parameterType="java.lang.String"  resultType="com.yalongz.entity.users">
+	 
+	select id,pwd,name,status,mail,sex,cardid,mobile from users
+	 where id=#{id}
+	</select>
+	
+	 <insert id="insert" parameterType="com.yalongz.entity.users" >
+       INSERT INTO 
+       		users
+       		(id,pwd,name,status,mail,sex,cardid,mobile ) 
+       	VALUES
+       		(#{id},#{pwd},#{name},#{status},#{mail},#{sex},#{cardid},#{mobile})
+    </insert>
+    
+</mapper>
